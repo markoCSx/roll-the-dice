@@ -16,14 +16,15 @@ public class Dice {
             randomDice1 = roll();
             randomDice2 = roll();
             sum = randomDice1 + randomDice2;
+            System.out.printf("Roll %d: %d - %d   Sum: %d\n", i, randomDice1, randomDice2, sum);
             switch (sum) {
                 case 2 -> two++;
                 case 4 -> four++;
                 case 6 -> six++;
                 case 7 -> seven++;
             };
-
         }
+
         sum = two + four + six + seven;
         System.out.printf("""
                 Two: %d
@@ -32,10 +33,12 @@ public class Dice {
                 Seven: %d
                 Total = %d
                 """, two, four, six, seven, sum);
+
     }
 
     public static int roll() {
         int randomNumber = (int) ((Math.random() * (6 - 1 + 1)) + 1);
         return randomNumber;
     }
+
 }
